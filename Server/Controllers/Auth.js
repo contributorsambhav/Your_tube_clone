@@ -2,7 +2,7 @@ import users from "../Models/Auth.js"
 import jwt from "jsonwebtoken"
 export const login = async (req, res) => {
     const { email } = req.body;
-    // console.log(email)
+    console.log(email)
     try {
         const extinguser = await users.findOne({ email })
         if (!extinguser) {
@@ -16,7 +16,8 @@ export const login = async (req, res) => {
                 )
                 res.status(200).json({ result: newuser, token })
             } catch (error) {
-                res.status(500).json({ mess: "something went wrong..." })
+                console.log("user not created in database...");
+                res.status(500).json({ mess: "user not created in database..." , })
                 return
             }
 
@@ -30,6 +31,7 @@ export const login = async (req, res) => {
             res.status(200).json({ result: extinguser ,token})
         }
     } catch (error) {
+        console.log("uh",error);
         res.status(500).json({ mess: "something went wrong..." })
         return
     }

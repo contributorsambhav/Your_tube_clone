@@ -40,10 +40,22 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
     // }
 
     const google_login = useGoogleLogin({
-        onSuccess: tokenResponse => setuser(tokenResponse),
-        
+        onSuccess: async (tokenResponse) => {
+          setuser(tokenResponse);
+
+          const response = await axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${tokenResponse.access_token}`, {
+            headers: {
+              Authorization: `Bearer ${tokenResponse.access_token}`,
+              Accept: 'application/json'
+            }
+          });
+
+          setprofile(response.data);
+
+          dispatch(login({ email: response.data.email }));
+        },
         onError: (error) => console.log("Login Failed", error)
-    });
+      });
 
     useEffect(
         () => {
