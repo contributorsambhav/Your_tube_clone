@@ -35,6 +35,9 @@ const videofileschema=new mongoose.Schema(
         },
         uploader:{
             type:String
+        },
+        transformedURLs : {
+            type : [String]
         }
     },
     {

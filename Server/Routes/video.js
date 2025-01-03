@@ -6,10 +6,11 @@ import { historycontroller,deletehistory,getallhistorycontroller } from "../Cont
 import { watchlatercontroller,getallwatchlatervontroller,deletewatchlater } from "../Controllers/watchlater.js";
 import { likedvideocontroller,getalllikedvideo,deletelikedvideo } from "../Controllers/likedvideo.js";
 import upload from "../Helper/filehelper.js";
+import uploadToCloudinary from "../middleware/process.js";
 import auth  from "../middleware/auth.js"
 const routes=express.Router();
 
-routes.post("/uploadvideo",auth,upload.single("file"),uploadvideo)
+routes.post("/uploadvideo",auth,upload.single("file"),uploadToCloudinary,uploadvideo)
 
 routes.get("/getvideos",getallvideos)
 routes.patch('/like/:id',auth,likevideocontroller)

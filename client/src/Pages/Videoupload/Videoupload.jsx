@@ -28,7 +28,9 @@ const Videoupload = ({ setvideouploadpage }) => {
             alert("plz enter a title of the video")
         } else if (!videofile) {
             alert("plz attach a video file");
-        }else {
+        } else if (videofile.size > 3000000) {
+            alert("Plz attach video file less than 3 MB")
+        } else {
             const filedata = new FormData()
             filedata.append("file", videofile)
             filedata.append("title", title)

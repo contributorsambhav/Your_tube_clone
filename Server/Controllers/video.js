@@ -1,7 +1,7 @@
 import videofile from "../Models/videofile.js";
 export const uploadvideo=async(req,res)=>{
     if(req.file=== undefined){
-        res.status(404).json({message:"plz upload a mp.4 video file only"})
+        res.status(404).json({message:"plz upload a .mp4 video file only"})
     }else{
         try {
             const file=new videofile({
@@ -12,9 +12,12 @@ export const uploadvideo=async(req,res)=>{
                 filesize:req.file.size,
                 videochanel:req.body.chanel,
                 uploader:req.body.uploader,
+                transformedURLs: req.transformedURLs
             })
-            // console.log(file)
+            console.log(file)
+            console.log("uploading... ");
             await file.save()
+            console.log("File uploaded successfully");
             res.status(200).send("File uploaded successfully")
         } catch (error) {
             res.status(404).json(error.message)

@@ -13,7 +13,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://nullclassfirstproject.netlify.app",
+    // origin: "https://nullclassfirstproject.netlify.app",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
