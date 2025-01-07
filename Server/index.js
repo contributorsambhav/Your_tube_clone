@@ -7,7 +7,7 @@ import videoroutes from "./Routes/video.js";
 import userroutes from "./Routes/User.js";
 import path from "path";
 import commentroutes from "./Routes/comment.js";
-
+import translateroutes from "./Routes/translate.js";
 dotenv.config();
 const app = express();
 
@@ -31,6 +31,8 @@ app.get("/", (req, res) => {
 app.use("/user", userroutes);
 app.use("/video", videoroutes);
 app.use("/comment", commentroutes);
+app.use("/translate", translateroutes);
+
 const PORT = process.env.PORT || 5000;
 
 const DB_URL = process.env.DB_URL;
