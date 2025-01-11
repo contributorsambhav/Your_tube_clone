@@ -53,3 +53,109 @@
     .EditDel_DisplayCommendt i {
       padding: 0.2rem;
     }
+
+
+    /* Style for the Translate button */
+.translate_btn {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.translate_btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the language dropdown */
+.language-dropdown {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.language-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-dropdown li {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color:  #020000 ;
+
+  transition: background-color 0.3s ease;
+}
+
+.language-dropdown li:hover {
+  background-color: #f0f0f0;
+
+}
+
+/* Style for the Like and Dislike buttons */
+.comment_actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.like_btn, .dislike_btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.like_btn:hover {
+  background-color: #218838;
+}
+
+.dislike_btn {
+  background-color: #dc3545;
+}
+
+.dislike_btn:hover {
+  background-color: #c82333;
+}
+
+/* Style for the like and dislike counts */
+.like_btn span, .dislike_btn span {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Edit and Delete action links */
+.EditDel_DisplayCommendt {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.EditDel_DisplayCommendt i {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.EditDel_DisplayCommendt i:hover {
+  color: #0056b3;
+}
